@@ -59,24 +59,43 @@
   <p>&copy; 2025 Diza A&C | Creatividad, diseño y estrategia digital</p>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 <script>
-  const images = document.querySelectorAll('.gallery-grid img');
-  images.forEach(img => {
-    img.addEventListener('click', () => {
-      const overlay = document.createElement('div');
-      overlay.classList.add('lightbox');
-      overlay.innerHTML = `<img src="${img.src}" alt=""><span class="close">&times;</span>`;
-      overlay.addEventListener('click', e => {
-        if (e.target.classList.contains('close') || e.target === overlay) overlay.remove();
-      });
-      document.body.appendChild(overlay);
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+  const icon = toggle ? toggle.querySelector("i") : null;
+
+  if (toggle && nav && icon) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+      icon.classList.toggle("fa-bars");
+      icon.classList.toggle("fa-xmark");
     });
-  });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("show");
+        icon.classList.add("fa-bars");
+        icon.classList.remove("fa-xmark");
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      if (nav.classList.contains("show")) {
+        nav.classList.remove("show");
+        icon.classList.add("fa-bars");
+        icon.classList.remove("fa-xmark");
+      }
+    });
+  }
+});
 </script>
 
 </body>
 
 </html>
+
 
 
 
