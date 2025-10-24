@@ -15,11 +15,12 @@ body {
   padding: 0;
 }
 
+/* === NAVBAR === */
 .navbar {
   position: sticky;
   top: 0;
   width: 100%;
-  background: var(--negro);
+  background: #0a0a0a;
   padding: 16px 40px;
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -44,7 +45,7 @@ body {
 }
 
 .nav-links a {
-  color: var(--blanco);
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -52,18 +53,20 @@ body {
 
 .nav-links a:hover,
 .nav-links .active {
-  color: var(--dorado);
+  color: #d4af37;
 }
 
+/* === MENÚ HAMBURGUESA === */
 .menu-toggle {
   display: none;
   background: transparent;
   border: none;
-  color: var(--blanco);
-  font-size: 1.6rem;
+  color: #ffffff;
+  font-size: 1.8rem;
   cursor: pointer;
 }
 
+/* Versión móvil */
 @media (max-width: 880px) {
   .menu-toggle {
     display: block;
@@ -81,7 +84,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 32px;
-    transition: right 0.3s ease;
+    transition: right 0.4s ease;
+    z-index: 1000;
   }
 
   .nav-links.show {
@@ -90,25 +94,12 @@ body {
 
   .nav-links a {
     font-size: 1.2rem;
-    color: var(--blanco);
+    color: #fff;
   }
 
-  .nav-links.show::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(212,175,55,0.05), rgba(0,0,0,0.9));
-    z-index: -1;
+  .nav-links a:hover {
+    color: #d4af37;
   }
-}
-
-.page-hero {
-  position: relative;
-  text-align: center;
-  padding: 140px 20px;
-  background: url("https://source.unsplash.com/1600x500/?team,office") no-repeat center/cover;
-  padding: 80px 20px;
-  color: var(--blanco);
 }
 
 .page-hero::before {
@@ -216,4 +207,5 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.1);
   color: var(--gris);
 }
+
 
