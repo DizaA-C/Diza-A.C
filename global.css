@@ -12,15 +12,14 @@ body {
   color: var(--negro);
 }
 
-/* === NAVBAR === */
+/* === NAVBAR BASE === */
 .navbar {
   position: sticky;
   top: 0;
   width: 100%;
-  background: #0a0a0a;
+  background: #0a0a0a; /* negro elegante */
   padding: 16px 40px;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-container {
@@ -50,7 +49,7 @@ body {
 
 .nav-links a:hover,
 .nav-links .active {
-  color: #d4af37;
+  color: #d4af37; /* dorado */
 }
 
 /* === MENÚ HAMBURGUESA === */
@@ -63,7 +62,7 @@ body {
   cursor: pointer;
 }
 
-/* Versión móvil */
+/* === VERSIÓN MÓVIL === */
 @media (max-width: 880px) {
   .menu-toggle {
     display: block;
@@ -86,7 +85,7 @@ body {
   }
 
   .nav-links.show {
-    right: 0;
+    right: 0; /* se muestra el menú */
   }
 
   .nav-links a {
@@ -98,6 +97,7 @@ body {
     color: #d4af37;
   }
 }
+
 
 
 .page-hero {
@@ -304,5 +304,6 @@ footer .socials a:hover {
     grid-template-columns: 1fr;
   }
 }
+
 
 
